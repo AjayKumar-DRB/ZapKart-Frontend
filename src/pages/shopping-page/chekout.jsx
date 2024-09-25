@@ -29,7 +29,7 @@ function ShoppingCheckout() {
               : currentItem?.price) *
               currentItem?.quantity,
           0
-        )
+        ).toFixed(2)
       : 0;
 
   function handleInitiatePaypalPayment() {
@@ -82,7 +82,6 @@ function ShoppingCheckout() {
     };
 
     dispatch(createNewOrder(orderData)).then((data) => {
-      console.log(data, "sangam");
       if (data?.payload?.success) {
         setIsPaymemntStart(true);
       } else {
