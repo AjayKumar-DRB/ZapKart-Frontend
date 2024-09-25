@@ -79,8 +79,6 @@ function HeaderRightContent() {
     dispatch(fetchCartItems(user?.id));
   }, [dispatch]);
 
-  console.log(cartItems, "sangam");
-
   return (
     <div className="flex lg:items-center lg:flex-row flex-col gap-4">
       <Sheet open={openCartSheet} onOpenChange={() => setOpenCartSheet(false)}>
@@ -91,8 +89,8 @@ function HeaderRightContent() {
           className="relative"
         >
           <ShoppingCart className="w-6 h-6" />
-          <span className="absolute top-[-5px] right-[2px] font-bold text-sm">
-            {cartItems?.items?.length || 0}
+          <span className="absolute top-[-3px] right-[5px] font-bold text-sm">
+            {cartItems?.items?.length ? Math.min(cartItems.items.length, 99) : 0}
           </span>
           <span className="sr-only">User cart</span>
         </Button>
