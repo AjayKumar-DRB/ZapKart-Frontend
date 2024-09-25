@@ -16,7 +16,7 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
               : currentItem?.price) *
               currentItem?.quantity,
           0
-        )
+        ).toFixed(2)
       : 0;
 
   return (
