@@ -29,7 +29,7 @@ function ShoppingCheckout() {
               : currentItem?.price) *
               currentItem?.quantity,
           0
-        ).toFixed(2)
+        )
       : 0;
 
   function handleInitiatePaypalPayment() {
