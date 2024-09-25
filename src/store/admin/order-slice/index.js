@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const baseURL = "http://localhost:5000/api/admin/orders"; // Define the base URL here
+const baseURL = "https://zapkart-backend.onrender.com/api/admin/orders"; // Define the base URL here
 
 const initialState = {
   orderList: [],

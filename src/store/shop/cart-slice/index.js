@@ -2,7 +2,7 @@ import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Define the base URL for your API
-const baseURL = "http://localhost:5000/api/shop/cart";
+const baseURL = "https://zapkart-backend.onrender.com/api/shop/cart";
 
 const initialState = {
   cartItems: [],
