@@ -24,10 +24,12 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
       <SheetHeader>
         <SheetTitle>Your Cart</SheetTitle>
       </SheetHeader>
-      <div className="mt-8 space-y-4 h-[100vh] overflow-y-auto">
+      <div className="mt-8 space-y-4 overflow-y-auto h-[300px]"> {/* Set height here */}
         {cartItems && cartItems.length > 0
-          ? cartItems.map((item) => <UserCartItemsContent cartItem={item} />)
-          : null}
+          ? cartItems.map((item) => (
+              <UserCartItemsContent key={item.id} cartItem={item} /> // Add key prop for list items
+            ))
+          : <div className="text-center">Your cart is empty.</div>}
       </div>
       <div className="mt-8 space-y-4">
         <div className="flex justify-between">
