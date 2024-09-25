@@ -24,7 +24,7 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
       <SheetHeader>
         <SheetTitle>Your Cart</SheetTitle>
       </SheetHeader>
-      <div className="mt-8 space-y-4 overflow-y-auto sm:h-[320px]"> {/* Set height here */}
+      <div className="mt-8 space-y-4 overflow-y-auto h-[320px]"> {/* Set height here */}
         {cartItems && cartItems.length > 0
           ? cartItems.map((item) => (
               <UserCartItemsContent key={item.id} cartItem={item} /> // Add key prop for list items
