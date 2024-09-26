@@ -1,0 +1,4 @@
+[[redirect]]
+from="/*"
+to="/auth/login"
+status = 200
