@@ -24,7 +24,7 @@ import { useEffect, useState } from "react";
 import { fetchCartItems } from "@/store/shop/cart-slice";
 import { Label } from "../ui/label";
 
-function MenuItems() {
+function MenuItems({ closeMenu }) { // Receive closeMenu prop
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -47,6 +47,11 @@ function MenuItems() {
           new URLSearchParams(`?category=${getCurrentMenuItem.id}`)
         )
       : navigate(getCurrentMenuItem.path);
+    
+    // Close the menu after navigation
+    if (closeMenu) {
+      closeMenu();
+    }
   }
 
   return (
@@ -132,6 +137,7 @@ function HeaderRightContent() {
 
 function ShoppingHeader() {
   const { isAuthenticated } = useSelector((state) => state.auth);
+  const [openMenu, setOpenMenu] = useState(false); // State for mobile menu
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
@@ -140,7 +146,7 @@ function ShoppingHeader() {
           <HousePlug className="h-6 w-6" />
           <span className="font-bold">Ecommerce</span>
         </Link>
-        <Sheet>
+        <Sheet open={openMenu} onOpenChange={setOpenMenu}> {/* Open/close controlled */}
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="lg:hidden">
               <Menu className="h-6 w-6" />
@@ -148,7 +154,7 @@ function ShoppingHeader() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-full max-w-xs">
-            <MenuItems />
+            <MenuItems closeMenu={() => setOpenMenu(false)} /> {/* Pass closeMenu */}
             <HeaderRightContent />
           </SheetContent>
         </Sheet>
