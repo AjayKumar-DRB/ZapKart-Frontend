@@ -154,8 +154,8 @@ function ShoppingHeader() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-full max-w-xs">
-            <MenuItems closeMenu={() => setOpenMenu(false)} /> {/* Pass closeMenu */}
             <HeaderRightContent />
+            <MenuItems closeMenu={() => setOpenMenu(false)} /> {/* Pass closeMenu */}
           </SheetContent>
         </Sheet>
         <div className="hidden lg:block">
