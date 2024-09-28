@@ -143,7 +143,7 @@ function ShoppingHeader() {
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/shop/home" className="flex items-center gap-2">
-          <img className="h-5 lg:h-10" src="../../assets/Logo.png" alt="Logo" />
+          <img className="h-5 lg:h-10" src="../../assets/logo.png" alt="Logo" />
           <span className="font-bold">ZapCart</span>
         </Link>
         <Sheet open={openMenu} onOpenChange={setOpenMenu}> {/* Open/close controlled */}
