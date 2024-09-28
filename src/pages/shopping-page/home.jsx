@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+  import { Button } from "@/components/ui/button";
 import {
   Airplay,
   BabyIcon,
@@ -119,7 +119,7 @@ function ShoppingHome() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="relative w-full h-[600px] overflow-hidden">
+      <div className="relative w-full lg:h-[600px] h-[250px] overflow-hidden">
         {featureImageList && featureImageList.length > 0
           ? featureImageList.map((slide, index) => (
               <img
